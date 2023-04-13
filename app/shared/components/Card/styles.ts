@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
-import {pixelSizeHorizontal} from '../../../shared/theme/metrics';
-import {pixelSizeVertical} from '../../../shared/theme/metrics';
+import {pixelSizeHorizontal} from '../../theme/metrics';
+import {pixelSizeVertical} from '../../theme/metrics';
 
 export const styles = StyleSheet.create({
   card: {

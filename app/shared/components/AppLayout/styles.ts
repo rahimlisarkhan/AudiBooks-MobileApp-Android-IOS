@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
-import {heightPixel} from '../../theme/metrics';
+import {heightPixel, pixelSizeVertical} from '../../theme/metrics';
+import {COLORS} from '../../theme/colors';
 
 export const styles = StyleSheet.create({
   overlay: {
@@ -8,9 +9,17 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     height: heightPixel(200),
+    backgroundColor: COLORS.neutralWhite,
+    zIndex: 2,
   },
 
   rightBgImage: {
     alignSelf: 'flex-end',
+  },
+
+  container: {
+    flex: 1,
+    backgroundColor: COLORS.neutralWhite,
+    paddingVertical: pixelSizeVertical(32),
   },
 });

@@ -3,7 +3,7 @@ import React, {FunctionComponent} from 'react';
 import {Typography} from '../../../ui/Typography';
 
 import {styles} from './styles';
-import {COLORS} from '../../../shared/theme/colors';
+import {COLORS} from '../../theme/colors';
 
 type Props = {
   icon: FunctionComponent<SVGElement>;
@@ -11,7 +11,7 @@ type Props = {
   desc: string;
 };
 
-export const Card: React.FC<Props> = ({icon, title, desc}) => {
+export const InfoCard: React.FC<Props> = ({icon, title, desc}) => {
   const Icon = icon;
 
   return (
@@ -29,7 +29,6 @@ export const Card: React.FC<Props> = ({icon, title, desc}) => {
       <Typography variant="headline" weight="regular" color={COLORS.neutral80}>
         {desc}
       </Typography>
-      <Text>Card</Text>
     </View>
   );
 };

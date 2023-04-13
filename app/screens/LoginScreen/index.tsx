@@ -1,11 +1,14 @@
 import React from 'react';
 import {StyleSheet, Text} from 'react-native';
 import {AppLayout} from '../../shared/components/AppLayout';
+import {TextInput} from '../../shared/components/TextInput/TextInput';
 
 const LoginScreen = () => {
   return (
     <AppLayout>
-      <Text style={style.container}>OnBdsdsorading</Text>
+      <Text style={style.container}>Login</Text>
+
+      <TextInput placeholder="test" />
     </AppLayout>
   );
 };

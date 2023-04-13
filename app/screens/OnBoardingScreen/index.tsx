@@ -1,15 +1,26 @@
-import React from 'react';
-import {StyleSheet, Text} from 'react-native';
+import React, {useEffect} from 'react';
 import {AppLayout} from '../../shared/components/AppLayout';
-import {Typography} from '../../ui/Typography';
 import Slide from '../../feature/Onboarding/Slide/Slide';
 import {onBoardData} from '../../shared/constants/onboard';
-import {Card} from '../../feature/Onboarding/Card';
+import {useNavigation} from '@react-navigation/native';
+import {PATH} from '../../shared/constants/path';
+import {InfoCard} from '../../shared/components/Card';
 
 const OnBoardingScreen = () => {
+  const {navigate} = useNavigation();
+
+  const onHandleRouter = () => {
+    navigate(PATH.Login.pathname);
+  };
+
   return (
     <AppLayout bgShow>
-      <Slide data={onBoardData} renderCard={item => <Card {...item} />} />
+      <Slide
+        data={onBoardData}
+        renderCard={item => <InfoCard {...item} />}
+        onPrevPress={onHandleRouter}
+        onLastPress={onHandleRouter}
+      />
     </AppLayout>
   );
 };

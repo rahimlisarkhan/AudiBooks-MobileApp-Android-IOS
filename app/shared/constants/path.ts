@@ -17,11 +17,11 @@ export const PATH = {
   },
   Auth: {
     name: 'Auth',
-    pathname: null,
+    pathname: 'Auth',
   },
   GeneralRouter: {
     name: 'GeneralRouter',
-    pathname: null,
+    pathname: 'GeneralRouter',
   },
   Welcome: {
     name: 'Welcome',

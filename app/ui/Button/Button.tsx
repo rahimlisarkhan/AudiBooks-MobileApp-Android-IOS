@@ -1,8 +1,9 @@
 import {Text, TouchableOpacity} from 'react-native';
-import React, {PropsWithChildren} from 'react';
+import React, {CSSProperties, PropsWithChildren} from 'react';
 
 import {btStyle} from './style';
 import {ButtonSizeType, ButtonVariantType} from './type';
+import {COLORS} from '../../shared/theme/colors';
 
 type Props = {
   text?: string;
@@ -11,6 +12,7 @@ type Props = {
   bgColor?: string;
   color?: string;
   onPress?: () => void;
+  style?: CSSProperties;
 };
 
 export const Button: React.FC<PropsWithChildren<Props>> = ({
@@ -21,22 +23,27 @@ export const Button: React.FC<PropsWithChildren<Props>> = ({
   bgColor,
   color,
   onPress,
+  style,
   ...props
 }) => {
+  const isNotContained = variant === 'text' || variant === 'outlined';
+
   return (
     <TouchableOpacity
       onPress={onPress}
-      style={{
-        ...btStyle[size ?? 'medium'],
-        ...btStyle[variant ?? 'contained'],
-        backgroundColor: bgColor,
-      }}
+      style={[
+        btStyle.button,
+        btStyle[size ?? 'medium'],
+        btStyle[variant ?? 'contained'],
+        {backgroundColor: isNotContained ? 'transparent' : bgColor},
+        style,
+      ]}
       {...props}>
       <Text
         style={{
           ...btStyle.buttonText,
           fontSize: btStyle[size ?? 'medium'].fontSize,
-          color,
+          color: isNotContained ? COLORS.primary50 : color,
         }}>
         {children ?? text}
       </Text>
@@ -48,4 +55,6 @@ Button.defaultProps = {
   text: 'Button',
   size: 'medium',
   variant: 'contained',
+  bgColor: COLORS.primary50,
+  color: COLORS.neutralWhite,
 };

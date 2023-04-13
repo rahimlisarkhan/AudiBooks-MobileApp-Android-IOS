@@ -12,7 +12,9 @@ export const btStyle = StyleSheet.create({
   },
 
   buttonText: {
-    fontFamily: 'Popins',
+    fontFamily: 'Poppins',
+    fontWeight: '500',
+    textAlign: 'center',
   },
 
   xlarge: {
@@ -39,18 +41,18 @@ export const btStyle = StyleSheet.create({
   },
 
   contained: {
-    backgroundColor: COLORS.mainBlue,
-    color: COLORS.white,
+    backgroundColor: COLORS.primary50,
   },
 
   outlined: {
-    color: COLORS.mainBlue,
     borderWidth: 1,
     borderStyle: 'solid',
-    borderColor: COLORS.mainBlue,
+    borderColor: COLORS.primary50,
+    backgroundColor: 'transparent !important',
   },
 
   text: {
-    borderColor: COLORS.mainBlue,
+    borderColor: COLORS.neutral80,
+    backgroundColor: 'transparent !important',
   },
 });
