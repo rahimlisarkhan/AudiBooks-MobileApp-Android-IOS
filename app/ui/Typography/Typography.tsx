@@ -2,6 +2,7 @@ import {Text, TouchableOpacity} from 'react-native';
 import React, {CSSProperties, PropsWithChildren} from 'react';
 import {styles as tyStyle} from './style';
 import {FontVariantType, FontWeightType} from '../../types/typography';
+import {COLORS} from '../../shared/theme/colors';
 
 type Props = {
   variant?: FontVariantType;
@@ -51,5 +52,5 @@ export const Typography: React.FC<PropsWithChildren<Props>> = ({
 Typography.defaultProps = {
   variant: 'body1',
   weight: 'regular',
-  color: 'black',
+  color: COLORS.neutral80,
 };

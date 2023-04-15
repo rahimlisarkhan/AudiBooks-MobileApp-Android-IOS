@@ -1,9 +1,8 @@
 import {TouchableOpacity, View} from 'react-native';
 import {Typography} from '../../../ui/Typography';
-import ArrowLeftIcon from '../../../assets/icons/arrow-light-left.svg';
-import MoreIcon from '../../../assets/icons/more-square.svg';
 import {styles} from './style';
 import {COLORS} from '../../theme/colors';
+import {AppIcon} from '../AppIcon';
 
 type Props = {
   title: string;
@@ -21,15 +20,15 @@ export const AppHeader: React.FC<Props> = ({
   return (
     <View style={styles.content}>
       <TouchableOpacity onPress={onBackButton}>
-        <ArrowLeftIcon width={24} height={24} color={COLORS.neutral80} />
+        <AppIcon name="arrow-light-left" size={24} color={COLORS.neutral80} />
       </TouchableOpacity>
-      <Typography variant="body2" weight="medium" color={COLORS.neutral80}>
+      <Typography variant="body2" weight="medium">
         {title}
       </Typography>
       <View>
         {moreIcon && (
           <TouchableOpacity onPress={onMoreButton}>
-            <MoreIcon width={24} height={24} color={COLORS.neutral80} />
+            <AppIcon name="more-square" size={24} color={COLORS.neutral80} />
           </TouchableOpacity>
         )}
       </View>

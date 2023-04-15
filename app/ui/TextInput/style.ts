@@ -1,11 +1,11 @@
 import {StyleSheet} from 'react-native';
-import {COLORS} from '../../theme/colors';
+import {COLORS} from '../../shared/theme/colors';
 import {
   fontPixel,
   heightPixel,
   pixelSizeHorizontal,
   pixelSizeVertical,
-} from '../../theme/metrics';
+} from '../../shared/theme/metrics';
 
 export const styles = StyleSheet.create({
   inputContent: {

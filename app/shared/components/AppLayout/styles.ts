@@ -1,5 +1,9 @@
 import {StyleSheet} from 'react-native';
-import {heightPixel, pixelSizeVertical} from '../../theme/metrics';
+import {
+  heightPixel,
+  pixelSizeHorizontal,
+  pixelSizeVertical,
+} from '../../theme/metrics';
 import {COLORS} from '../../theme/colors';
 
 export const styles = StyleSheet.create({
@@ -21,5 +25,6 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: COLORS.neutralWhite,
     paddingVertical: pixelSizeVertical(32),
+    paddingHorizontal: pixelSizeHorizontal(40),
   },
 });

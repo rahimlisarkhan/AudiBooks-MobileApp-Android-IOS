@@ -1,23 +1,13 @@
 import React from 'react';
-import {StyleSheet, Text} from 'react-native';
 import {AppLayout} from '../../shared/components/AppLayout';
-import {TextInput} from '../../shared/components/TextInput/TextInput';
+import {Login} from '../../feature/Auth/components/Login';
 
 const LoginScreen = () => {
   return (
     <AppLayout>
-      <Text style={style.container}>Login</Text>
-
-      <TextInput placeholder="test" />
+      <Login />
     </AppLayout>
   );
 };
 
 export default LoginScreen;
-
-const style = StyleSheet.create({
-  container: {
-    fontSize: 40,
-    fontFamily: 'Poppins',
-  },
-});

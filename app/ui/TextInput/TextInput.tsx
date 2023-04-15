@@ -1,18 +1,20 @@
-import {View, Text, TextInput as Input} from 'react-native';
-import React, {useState} from 'react';
+import {View, TextInput as Input} from 'react-native';
+import React, {CSSProperties, useState} from 'react';
 import {styles} from './style';
-import {COLORS} from '../../theme/colors';
+import {COLORS} from '../../shared/theme/colors';
 
 type Props = {
   placeholder: string;
   disabled?: boolean;
   readOnly?: boolean;
+  style?: CSSProperties;
 };
 
 export const TextInput: React.FC<Props> = ({
   disabled,
   placeholder,
   readOnly,
+  style,
   ...props
 }) => {
   const [activeInput, setActiveInput] = useState(false);
@@ -33,6 +35,7 @@ export const TextInput: React.FC<Props> = ({
           styles.input,
           activeInput && styles.activeInput,
           disabled && styles.disabled,
+          style,
         ]}
         placeholder={placeholder}
         placeholderTextColor={COLORS.neutral40}

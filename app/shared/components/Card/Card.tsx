@@ -1,9 +1,8 @@
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
 import React, {FunctionComponent} from 'react';
 import {Typography} from '../../../ui/Typography';
 
 import {styles} from './styles';
-import {COLORS} from '../../theme/colors';
 
 type Props = {
   icon: FunctionComponent<SVGElement>;
@@ -19,14 +18,10 @@ export const InfoCard: React.FC<Props> = ({icon, title, desc}) => {
       <View>
         <Icon />
       </View>
-      <Typography
-        style={styles.title}
-        variant="body2"
-        weight="semibold"
-        color={COLORS.neutral80}>
+      <Typography style={styles.title} variant="body2" weight="semibold">
         {title}
       </Typography>
-      <Typography variant="headline" weight="regular" color={COLORS.neutral80}>
+      <Typography variant="headline" weight="regular">
         {desc}
       </Typography>
     </View>
