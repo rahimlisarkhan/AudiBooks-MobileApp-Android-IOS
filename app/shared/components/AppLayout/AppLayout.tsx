@@ -11,10 +11,12 @@ import {AppIcon} from '../AppIcon';
 
 type Props = {
   bgShow?: boolean;
+  variant?: 'small' | 'normal' | 'none';
 };
 
 export const AppLayout: React.FC<PropsWithChildren<Props>> = ({
   bgShow,
+  variant = 'normal',
   children,
 }) => {
   return (
@@ -23,21 +25,28 @@ export const AppLayout: React.FC<PropsWithChildren<Props>> = ({
         barStyle={styles.barStyle}
         backgroundColor={styles.statusBarBackground}
       />
-      {bgShow && (
-        <View style={layoutStyle.overlay}>
-          <LogoCycle width={224} height={157} color={COLORS.neutral80} />
-          <AppIcon
-            style={layoutStyle.rightBgImage}
-            name="ellipse"
-            width={85}
-            size={85}
-            height={134}
-            color={COLORS.accent50}
-          />
+      <View style={layoutStyle.container_area}>
+        {bgShow && (
+          <View style={layoutStyle.overlay}>
+            <LogoCycle width={224} height={157} color={COLORS.neutral80} />
+            <AppIcon
+              style={layoutStyle.rightBgImage}
+              name="ellipse"
+              width={85}
+              size={85}
+              height={134}
+              color={COLORS.accent50}
+            />
+          </View>
+        )}
+        <View
+          style={[
+            layoutStyle.container,
+            variant && layoutStyle[variant],
+            {marginTop: bgShow ? -70 : 0},
+          ]}>
+          {children}
         </View>
-      )}
-      <View style={{...layoutStyle.container, marginTop: bgShow ? -30 : 0}}>
-        {children}
       </View>
     </>
   );

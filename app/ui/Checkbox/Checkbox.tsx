@@ -8,10 +8,10 @@ import {AppIcon} from '../../shared/components/AppIcon';
 import {Typography} from '../Typography';
 
 type Props = {
-  checked: boolean;
-  indeterminate: boolean;
+  checked?: boolean;
+  indeterminate?: boolean;
   onChange?: (data: boolean) => void;
-  style: CSSProperties;
+  style?: CSSProperties;
   label?: string;
 };
 

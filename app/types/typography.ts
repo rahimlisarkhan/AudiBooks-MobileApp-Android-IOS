@@ -1,6 +1,7 @@
 export type FontWeightType = 'regular' | 'medium' | 'semibold';
 
 export type FontVariantType =
+  | 'titleLarge'
   | 'title1'
   | 'title2'
   | 'title3'

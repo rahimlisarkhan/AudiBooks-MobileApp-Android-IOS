@@ -10,6 +10,7 @@ import {COLORS} from '../../../../shared/theme/colors';
 import {ProviderBtn} from '../ProviderBtn/ProviderBtn';
 import {PATH} from '../../../../shared/constants/path';
 import {useNavigation} from '@react-navigation/native';
+import {ProviderType} from '../../../../interface/provider';
 
 const GoogleIcon = lazy(() => import('../../../../assets/images/google.svg'));
 const FacebookIcon = lazy(
@@ -31,12 +32,17 @@ export const Login = () => {
   };
 
   const routeForgetPassword = () => {
-    navigate(PATH.SingUp.pathname);
+    navigate(PATH.ForgetPassword.pathname);
   };
 
   const handleSubmitForm = () => {
     console.log(form);
   };
+
+  const onHandleProvider = (provider: string) => {
+    console.log('provider: ', provider);
+  };
+
   return (
     <AuthForm title="Login to Your Account">
       <TextInput
@@ -63,7 +69,7 @@ export const Login = () => {
             style={styles.btnSend}
             onPress={handleSubmitForm}
           />
-          <TouchableOpacity>
+          <TouchableOpacity onPress={routeForgetPassword}>
             <Typography
               variant="headline"
               weight="semibold"
@@ -78,9 +84,18 @@ export const Login = () => {
             Or login with
           </Typography>
           <View style={styles.providerGroup}>
-            <ProviderBtn icon={GoogleIcon} />
-            <ProviderBtn icon={FacebookIcon} />
-            <ProviderBtn icon={TwitterIcon} />
+            <ProviderBtn
+              icon={GoogleIcon}
+              onPress={() => onHandleProvider(ProviderType.FB)}
+            />
+            <ProviderBtn
+              icon={FacebookIcon}
+              onPress={() => onHandleProvider(ProviderType.GOOGLE)}
+            />
+            <ProviderBtn
+              icon={TwitterIcon}
+              onPress={() => onHandleProvider(ProviderType.TWITTER)}
+            />
           </View>
 
           <TouchableOpacity onPress={routeRegister}>

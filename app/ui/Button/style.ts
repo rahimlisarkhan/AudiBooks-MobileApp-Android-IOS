@@ -40,8 +40,17 @@ export const btStyle = StyleSheet.create({
     fontSize: fontPixel(14),
   },
 
+  xsmall: {
+    paddingHorizontal: pixelSizeHorizontal(12),
+    paddingVertical: pixelSizeVertical(4),
+    fontSize: fontPixel(14),
+  },
+
   contained: {
     backgroundColor: COLORS.primary50,
+    borderWidth: 1,
+    borderStyle: 'solid',
+    borderColor: COLORS.primary50,
   },
 
   outlined: {
@@ -54,5 +63,13 @@ export const btStyle = StyleSheet.create({
   text: {
     borderColor: COLORS.neutral80,
     backgroundColor: 'transparent !important',
+  },
+
+  rounded: {
+    borderRadius: 300,
+  },
+
+  disabled: {
+    opacity: 0.3,
   },
 });

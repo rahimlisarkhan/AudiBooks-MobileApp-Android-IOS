@@ -7,14 +7,16 @@ import {
 import {COLORS} from '../../theme/colors';
 
 export const styles = StyleSheet.create({
+  container_area: {
+    flex: 1,
+    backgroundColor: COLORS.neutralWhite,
+  },
+
   overlay: {
     position: 'relative',
-    display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
     height: heightPixel(200),
-    backgroundColor: COLORS.neutralWhite,
-    zIndex: 2,
   },
 
   rightBgImage: {
@@ -22,9 +24,18 @@ export const styles = StyleSheet.create({
   },
 
   container: {
-    flex: 1,
-    backgroundColor: COLORS.neutralWhite,
     paddingVertical: pixelSizeVertical(32),
+  },
+
+  normal: {
     paddingHorizontal: pixelSizeHorizontal(40),
+  },
+
+  small: {
+    paddingHorizontal: pixelSizeHorizontal(24),
+  },
+
+  none: {
+    paddingHorizontal: 0,
   },
 });

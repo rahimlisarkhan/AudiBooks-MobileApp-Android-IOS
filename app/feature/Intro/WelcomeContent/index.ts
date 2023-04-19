@@ -1,0 +1,1 @@
+export {WelcomeContent} from './WelcomeContent';

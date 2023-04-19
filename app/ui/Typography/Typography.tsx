@@ -27,7 +27,7 @@ export const Typography: React.FC<PropsWithChildren<Props>> = ({
     ...tyStyle.font,
     ...tyStyle[variant ?? 'body1'],
     ...tyStyle[weight ?? 'regular'],
-    ...tyStyle[align ?? 'center'],
+    ...tyStyle[align ?? 'left'],
     color,
     ...style,
   };

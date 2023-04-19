@@ -9,6 +9,8 @@ type Props = {
   text?: string;
   size?: ButtonSizeType;
   variant?: ButtonVariantType;
+  disabled?: boolean;
+  rounded?: boolean;
   bgColor?: string;
   color?: string;
   onPress?: () => void;
@@ -21,8 +23,10 @@ export const Button: React.FC<PropsWithChildren<Props>> = ({
   size,
   variant,
   bgColor,
+  disabled,
   color,
   onPress,
+  rounded,
   style,
   ...props
 }) => {
@@ -31,11 +35,14 @@ export const Button: React.FC<PropsWithChildren<Props>> = ({
   return (
     <TouchableOpacity
       onPress={onPress}
+      disabled={disabled}
       style={[
         btStyle.button,
         btStyle[size ?? 'medium'],
         btStyle[variant ?? 'contained'],
         {backgroundColor: isNotContained ? 'transparent' : bgColor},
+        disabled && btStyle.disabled,
+        rounded && btStyle.rounded,
         style,
       ]}
       {...props}>

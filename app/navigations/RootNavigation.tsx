@@ -1,17 +1,32 @@
-import OnBoarding from '../screens/OnBoardingScreen';
+import OnBoarding from '../screens/AuthScreens/OnBoardingScreen';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {AuthNavigation} from './AuthNavigation';
 import ErrorScreen from '../screens/ErrorScreen';
 import {PATH} from '../shared/constants/path';
 import {GeneralRouter} from './GeneralRouter';
-import {Text} from 'react-native';
 import {AppHeader} from '../shared/components/AppHeader';
 import {getHeaderTitle} from '@react-navigation/elements';
 
 const Stack = createStackNavigator();
 
 export const RootNavigation = () => {
+  const auth = false;
+
+  const AUTH_OR_GENERAL = auth ? (
+    <Stack.Screen
+      name={PATH.Auth.pathname}
+      component={AuthNavigation}
+      options={{headerShown: false}}
+    />
+  ) : (
+    <Stack.Screen
+      name={PATH.GeneralRouter.pathname}
+      component={GeneralRouter}
+      options={{headerShown: false}}
+    />
+  );
+
   return (
     <NavigationContainer>
       <Stack.Navigator
@@ -22,18 +37,10 @@ export const RootNavigation = () => {
             return <AppHeader title={title} onBackButton={navigation.goBack} />;
           },
         }}>
-        <Stack.Screen
-          name={PATH.Auth.pathname}
-          component={AuthNavigation}
-          options={{headerShown: false}}
-        />
+        {AUTH_OR_GENERAL}
         <Stack.Screen
           name={PATH.ErrorNotFound.pathname}
           component={ErrorScreen}
-        />
-        <Stack.Screen
-          name={PATH.GeneralRouter.pathname}
-          component={GeneralRouter}
         />
       </Stack.Navigator>
     </NavigationContainer>

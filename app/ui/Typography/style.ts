@@ -6,6 +6,10 @@ export const styles = StyleSheet.create({
     fontFamily: 'Poppins',
   },
 
+  titleLarge: {
+    fontSize: fontPixel(48),
+  },
+
   title1: {
     fontSize: fontPixel(32),
   },
