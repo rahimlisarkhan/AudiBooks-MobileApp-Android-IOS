@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {CSSProperties} from 'react';
 import {ICONS, IconType} from './icons';
 
 type Props = {
@@ -7,13 +7,26 @@ type Props = {
   width?: number;
   height?: number;
   color?: string;
+  style?: CSSProperties | {};
 };
 
-export const AppIcon: React.FC<Props> = ({name, size, ...props}) => {
+export const AppIcon: React.FC<Props> = ({
+  name,
+  size,
+  width,
+  height,
+  style,
+  ...props
+}) => {
   const IconComponent = ICONS[name];
 
   return (
-    <IconComponent width={size ?? width} height={size ?? height} {...props} />
+    <IconComponent
+      width={size ?? width ?? 24}
+      height={size ?? height}
+      style={style}
+      {...props}
+    />
   );
 };
 

@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {AppLayout} from '../../../shared/components/AppLayout';
 import Slide from '../../../feature/Onboarding/Slide/Slide';
 import {onBoardData} from '../../../shared/constants/onboard';

@@ -24,7 +24,8 @@ export const styles = StyleSheet.create({
   },
 
   container: {
-    paddingVertical: pixelSizeVertical(32),
+    paddingTop: pixelSizeVertical(16),
+    paddingBottom: pixelSizeVertical(36),
   },
 
   normal: {

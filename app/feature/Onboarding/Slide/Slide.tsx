@@ -1,20 +1,16 @@
 import {View} from 'react-native';
-import React, {useEffect, useLayoutEffect, useMemo, useState} from 'react';
+import React, {useCallback, useMemo, useState} from 'react';
 import {Dots} from '../Dots';
 import {Button} from '../../../ui/Button/Button';
 import {styles} from './style';
 import {pixelSizeVertical} from '../../../shared/theme/metrics';
-import {useNavigation} from '@react-navigation/native';
+import {useFocusEffect} from '@react-navigation/native';
 
 type Props = {
-  data: {
-    [key in string]: string;
-  }[];
+  data: any[];
   onPrevPress: () => void;
   onLastPress: () => void;
-  renderCard: (cardData: {
-    [key in string]: string;
-  }) => void;
+  renderCard: (cardData: any) => void;
 };
 
 const Slide: React.FC<Props> = ({
@@ -23,8 +19,6 @@ const Slide: React.FC<Props> = ({
   onPrevPress,
   onLastPress,
 }) => {
-  const navigation = useNavigation();
-
   const slideSize = data.length - 1;
 
   const [slide, setSlide] = useState<number>(0);
@@ -36,9 +30,13 @@ const Slide: React.FC<Props> = ({
     [slide],
   );
 
-  useLayoutEffect(() => {
-    setSlide(0);
-  }, []);
+  useFocusEffect(
+    useCallback(() => {
+      return () => {
+        setSlide(0);
+      };
+    }, []),
+  );
 
   const onPrev = () => {
     setSlide(prevSlide => (prevSlide === 0 ? 0 : (prevSlide -= 1)));

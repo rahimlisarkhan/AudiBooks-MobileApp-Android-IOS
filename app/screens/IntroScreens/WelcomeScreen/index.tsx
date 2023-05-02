@@ -1,6 +1,6 @@
 import React from 'react';
-import {AppLayout} from '../../shared/components/AppLayout';
-import {WelcomeContent} from '../../feature/Intro/WelcomeContent';
+import {AppLayout} from '../../../shared/components/AppLayout';
+import {WelcomeContent} from '../../../feature/Intro/WelcomeContent';
 
 const WelcomeScreen = () => {
   return (

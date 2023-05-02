@@ -15,6 +15,7 @@ type Props = {
   color?: string;
   onPress?: () => void;
   style?: CSSProperties;
+  textStyle?: CSSProperties;
 };
 
 export const Button: React.FC<PropsWithChildren<Props>> = ({
@@ -28,6 +29,7 @@ export const Button: React.FC<PropsWithChildren<Props>> = ({
   onPress,
   rounded,
   style,
+  textStyle,
   ...props
 }) => {
   const isNotContained = variant === 'text' || variant === 'outlined';
@@ -40,7 +42,10 @@ export const Button: React.FC<PropsWithChildren<Props>> = ({
         btStyle.button,
         btStyle[size ?? 'medium'],
         btStyle[variant ?? 'contained'],
-        {backgroundColor: isNotContained ? 'transparent' : bgColor},
+        {
+          backgroundColor: isNotContained ? 'transparent' : bgColor,
+          borderColor: bgColor,
+        },
         disabled && btStyle.disabled,
         rounded && btStyle.rounded,
         style,
@@ -51,6 +56,7 @@ export const Button: React.FC<PropsWithChildren<Props>> = ({
           ...btStyle.buttonText,
           fontSize: btStyle[size ?? 'medium'].fontSize,
           color: isNotContained ? COLORS.primary50 : color,
+          ...textStyle,
         }}>
         {children ?? text}
       </Text>

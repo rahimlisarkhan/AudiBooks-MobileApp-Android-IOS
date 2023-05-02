@@ -1,0 +1,1 @@
+export {RecomendList} from './RecomendList';

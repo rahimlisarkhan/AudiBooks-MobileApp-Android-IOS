@@ -1,17 +1,17 @@
 export const PATH = {
   OnBoarding: {
     name: 'On Boarding',
-    pathname: 'OnBoarding',
+    pathname: 'OnBoarding' as never,
   },
 
   Login: {
     name: 'Login',
-    pathname: 'Login',
+    pathname: 'Login' as never,
   },
 
   SingUp: {
     name: 'Sing Up',
-    pathname: 'SingUp',
+    pathname: 'SingUp' as never,
   },
 
   ForgetPassword: {
@@ -58,5 +58,10 @@ export const PATH = {
   AboutItems: {
     name: 'About items',
     pathname: 'AboutItems',
+  },
+
+  DetailItems: {
+    name: 'Detail item',
+    pathname: 'DetailItems' as never,
   },
 };

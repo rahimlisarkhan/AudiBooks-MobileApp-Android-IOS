@@ -1,8 +1,23 @@
 import {StyleSheet} from 'react-native';
-import {pixelSizeVertical} from '../../../shared/theme/metrics';
+import {
+  pixelSizeHorizontal,
+  pixelSizeVertical,
+} from '../../../shared/theme/metrics';
 
 export const styles = StyleSheet.create({
   content: {
-    paddingHorizontal: pixelSizeVertical(24),
+    paddingLeft: pixelSizeHorizontal(24),
+  },
+
+  customBtnText: {
+    fontWeight: '400',
+  },
+
+  customBtn: {
+    marginRight: pixelSizeVertical(12),
+  },
+
+  mt: {
+    marginTop: pixelSizeVertical(29),
   },
 });

@@ -14,6 +14,10 @@ import SearchFilledIcon from '../../../assets/icons/search-filled.svg';
 import SearchIcon from '../../../assets/icons/search.svg';
 import SettingsIcon from '../../../assets/icons/settings.svg';
 import TimeSquareIcon from '../../../assets/icons/time-square.svg';
+
+import StarIcon from '../../../assets/icons/star.svg';
+import StarFilledIcon from '../../../assets/icons/star-filled.svg';
+
 import {SvgProps} from 'react-native-svg';
 
 export type IconType =
@@ -31,7 +35,9 @@ export type IconType =
   | 'search-filled'
   | 'search'
   | 'settings'
-  | 'time-square';
+  | 'time-square'
+  | 'star'
+  | 'star-filled';
 
 export const ICONS: {
   [key in IconType]: React.FC<SvgProps>;
@@ -51,4 +57,6 @@ export const ICONS: {
   search: SearchIcon,
   settings: SettingsIcon,
   'time-square': TimeSquareIcon,
+  star: StarIcon,
+  'star-filled': StarFilledIcon,
 };

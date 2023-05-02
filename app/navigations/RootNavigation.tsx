@@ -1,4 +1,3 @@
-import OnBoarding from '../screens/AuthScreens/OnBoardingScreen';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {AuthNavigation} from './AuthNavigation';

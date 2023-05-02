@@ -8,6 +8,7 @@ import Elipse from '../../../assets/icons/ellipse.svg';
 import {styles as layoutStyle} from './styles';
 import {COLORS} from '../../theme/colors';
 import {AppIcon} from '../AppIcon';
+import {ScrollView} from 'react-native-gesture-handler';
 
 type Props = {
   bgShow?: boolean;
@@ -39,14 +40,14 @@ export const AppLayout: React.FC<PropsWithChildren<Props>> = ({
             />
           </View>
         )}
-        <View
+        <ScrollView
           style={[
             layoutStyle.container,
             variant && layoutStyle[variant],
             {marginTop: bgShow ? -70 : 0},
           ]}>
           {children}
-        </View>
+        </ScrollView>
       </View>
     </>
   );
