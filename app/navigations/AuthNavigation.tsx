@@ -1,6 +1,6 @@
 import OnBoarding from '../screens/AuthScreens/OnBoardingScreen';
 import {createStackNavigator} from '@react-navigation/stack';
-import {PATH} from '../shared/constants/path';
+import {PATHNAME} from '../shared/constants/pathname';
 import SignUpScreen from '../screens/AuthScreens/SignUpScreen';
 import LoginScreen from '../screens/AuthScreens/LoginScreen';
 import ForgetPasswordScreen from '../screens/AuthScreens/ForgetPasswordScreen';
@@ -12,19 +12,22 @@ const Stack = createStackNavigator();
 export const AuthNavigation = () => {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
-      <Stack.Screen name={PATH.OnBoarding.pathname} component={OnBoarding} />
-      <Stack.Screen name={PATH.Login.pathname} component={LoginScreen} />
-      <Stack.Screen name={PATH.SingUp.pathname} component={SignUpScreen} />
       <Stack.Screen
-        name={PATH.ConfirmationCode.pathname}
+        name={PATHNAME.OnBoarding.pathname}
+        component={OnBoarding}
+      />
+      <Stack.Screen name={PATHNAME.Login.pathname} component={LoginScreen} />
+      <Stack.Screen name={PATHNAME.SingUp.pathname} component={SignUpScreen} />
+      <Stack.Screen
+        name={PATHNAME.ConfirmationCode.pathname}
         component={ConfirmCodeScreen}
       />
       <Stack.Screen
-        name={PATH.ForgetPassword.pathname}
+        name={PATHNAME.ForgetPassword.pathname}
         component={ForgetPasswordScreen}
       />
       <Stack.Screen
-        name={PATH.EmailSent.pathname}
+        name={PATHNAME.EmailSent.pathname}
         component={EmailSentScreen}
       />
     </Stack.Navigator>

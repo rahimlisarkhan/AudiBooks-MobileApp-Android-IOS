@@ -4,6 +4,8 @@ import {InfoTitle} from '../InfoTitle';
 import {styles} from './style';
 import {SuggestionCard} from '../SuggestionCard';
 import {CardInfo} from '../CardWithInfo';
+import {BookType} from '../../../types/books';
+import {CardImage} from '../CardImage';
 
 type Item = {
   [key in string]: unknown;
@@ -13,17 +15,15 @@ type Props = {
   title: string;
   onSeeMore?: () => void;
   variant?: 'withinfo' | 'suggestion' | 'normal';
-  data: Item[];
-  onPressItem?: (item: Item) => void;
+  data: BookType[];
+  onPressItem?: (item: any) => void;
 };
 
 const CardType = {
-  normal: (item: Item) => (
-    <Image style={styles.imageContent} source={{uri: item?.image_url ?? ''}} />
-  ),
+  normal: (item: BookType) => <CardImage {...item} />,
 
-  suggestion: (item: Item) => <SuggestionCard {...item} />,
-  withinfo: (item: Item) => <CardInfo {...item} />,
+  suggestion: (item: BookType) => <SuggestionCard {...item} />,
+  withinfo: (item: BookType) => <CardInfo {...item} />,
 };
 
 export const RecomendList: React.FC<Props> = ({
@@ -46,8 +46,8 @@ export const RecomendList: React.FC<Props> = ({
     <View>
       <InfoTitle title={title} onSeeMore={onSeeMore} />
       <FlatList
-        keyExtractor={(item: any) => {
-          return item.title;
+        keyExtractor={(item: any, index) => {
+          return item.id + index;
         }}
         style={styles.container}
         horizontal

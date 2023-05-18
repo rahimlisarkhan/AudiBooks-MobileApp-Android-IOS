@@ -6,7 +6,7 @@ import {COLORS} from '../../theme/colors';
 import {BookType} from '../../../types/books';
 import {shortName} from '../../utils/shortName';
 
-export const CardInfo: React.FC<BookType> = ({title, picture, authors}) => {
+export const CardImage: React.FC<BookType> = ({title, picture, authors}) => {
   const [load, setLoad] = useState(true);
 
   return (
@@ -17,14 +17,6 @@ export const CardInfo: React.FC<BookType> = ({title, picture, authors}) => {
         onLoad={() => setLoad(false)}
         source={{uri: picture?.small ?? ''}}
       />
-      <Typography variant="body2" weight="medium">
-        {shortName(title, 15)}
-      </Typography>
-      {authors.length && (
-        <Typography variant="caption" weight="medium" color={COLORS.primary50}>
-          {authors[0].name}
-        </Typography>
-      )}
     </View>
   );
 };

@@ -1,9 +1,10 @@
 import {Text, TouchableOpacity} from 'react-native';
-import React, {CSSProperties, PropsWithChildren} from 'react';
+import React, {CSSProperties, PropsWithChildren, ReactElement} from 'react';
 
 import {btStyle} from './style';
 import {ButtonSizeType, ButtonVariantType} from './type';
 import {COLORS} from '../../shared/theme/colors';
+import {SvgProps} from 'react-native-svg';
 
 type Props = {
   text?: string;
@@ -13,6 +14,7 @@ type Props = {
   rounded?: boolean;
   bgColor?: string;
   color?: string;
+  icon?: ReactElement;
   onPress?: () => void;
   style?: CSSProperties;
   textStyle?: CSSProperties;
@@ -30,6 +32,7 @@ export const Button: React.FC<PropsWithChildren<Props>> = ({
   rounded,
   style,
   textStyle,
+  icon,
   ...props
 }) => {
   const isNotContained = variant === 'text' || variant === 'outlined';
@@ -51,11 +54,13 @@ export const Button: React.FC<PropsWithChildren<Props>> = ({
         style,
       ]}
       {...props}>
+      {icon && icon}
       <Text
         style={{
           ...btStyle.buttonText,
           fontSize: btStyle[size ?? 'medium'].fontSize,
           color: isNotContained ? COLORS.primary50 : color,
+          marginLeft: icon ? 14 : 0,
           ...textStyle,
         }}>
         {children ?? text}

@@ -4,7 +4,7 @@ import {TextInput} from '../../../../ui/TextInput';
 import {styles} from './style';
 import {View} from 'react-native';
 import {Button} from '../../../../ui/Button';
-import {PATH} from '../../../../shared/constants/path';
+import {PATHNAME} from '../../../../shared/constants/pathname';
 import {useNavigation} from '@react-navigation/native';
 
 export const ForgetPassword = () => {
@@ -17,12 +17,12 @@ export const ForgetPassword = () => {
   };
 
   const routeLogin = () => {
-    navigate(PATH.Login.pathname);
+    navigate(PATHNAME.Login.pathname);
   };
 
   const handleSubmitForm = () => {
     console.log(form);
-    navigate(PATH.EmailSent.pathname, {
+    navigate(PATHNAME.EmailSent.pathname, {
       email: form.info,
     });
   };

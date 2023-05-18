@@ -24,7 +24,7 @@ export const AppIcon: React.FC<Props> = ({
     <IconComponent
       width={size ?? width ?? 24}
       height={size ?? height}
-      style={style}
+      style={style ?? {}}
       {...props}
     />
   );

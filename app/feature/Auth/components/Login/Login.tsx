@@ -8,7 +8,7 @@ import {Button} from '../../../../ui/Button';
 import {Typography} from '../../../../ui/Typography';
 import {COLORS} from '../../../../shared/theme/colors';
 import {ProviderBtn} from '../ProviderBtn/ProviderBtn';
-import {PATH} from '../../../../shared/constants/path';
+import {PATHNAME} from '../../../../shared/constants/pathname';
 import {useNavigation} from '@react-navigation/native';
 import {ProviderType} from '../../../../interface/provider';
 
@@ -28,11 +28,11 @@ export const Login = () => {
   };
 
   const routeRegister = () => {
-    navigate(PATH.SingUp.pathname);
+    navigate(PATHNAME.SingUp.pathname);
   };
 
   const routeForgetPassword = () => {
-    navigate(PATH.ForgetPassword.pathname);
+    navigate(PATHNAME.ForgetPassword.pathname);
   };
 
   const handleSubmitForm = () => {

@@ -5,7 +5,7 @@ import {AppLayout} from '../../../shared/components/AppLayout';
 import {Typography} from '../../../ui/Typography';
 import {convertToSecureEmail} from '../../../shared/utils/convertToSecureEmail';
 import {pixelSizeVertical} from '../../../shared/theme/metrics';
-import {PATH} from '../../../shared/constants/path';
+import {PATH} from '../../../shared/constants/pathname';
 
 const EmailSentScreen = () => {
   const {

@@ -1,15 +1,19 @@
-import {View, Text} from 'react-native';
-import React, {lazy} from 'react';
+import {View} from 'react-native';
+import React, {CSSProperties, lazy} from 'react';
 import {AppIcon} from '../AppIcon';
 import {COLORS} from '../../theme/colors';
-import {Button} from '../../../ui/Button';
 import {styles} from './style';
+import {StyleProp} from 'react-native';
 
 const LogoWithText = lazy(() => import('../../../assets/images/logo-text.svg'));
 
-export const TabHeader = () => {
+type Props = {
+  style?: CSSProperties | {};
+};
+
+export const TabHeader: React.FC<Props> = ({style = {}}) => {
   return (
-    <View style={styles.header}>
+    <View style={[styles.header, style]}>
       <LogoWithText />
       <AppIcon
         name="settings"

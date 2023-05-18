@@ -8,4 +8,9 @@ export const styles = StyleSheet.create({
     marginBottom: pixelSizeVertical(10),
     marginRight: pixelSizeHorizontal(14),
   },
+
+  stars: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
 });

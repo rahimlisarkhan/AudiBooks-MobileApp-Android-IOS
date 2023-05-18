@@ -3,6 +3,7 @@ import 'react-native-gesture-handler';
 import {RootNavigation} from './app/navigations/RootNavigation';
 import {styles} from './app/shared/theme/root';
 import {SafeAreaView} from 'react-native';
+import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 
 const App = (): JSX.Element => {
   return (

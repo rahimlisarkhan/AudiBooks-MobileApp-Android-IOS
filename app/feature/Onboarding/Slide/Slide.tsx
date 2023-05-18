@@ -1,7 +1,7 @@
 import {View} from 'react-native';
 import React, {useCallback, useMemo, useState} from 'react';
 import {Dots} from '../Dots';
-import {Button} from '../../../ui/Button/Button';
+import {Button} from '../../../ui/Button';
 import {styles} from './style';
 import {pixelSizeVertical} from '../../../shared/theme/metrics';
 import {useFocusEffect} from '@react-navigation/native';

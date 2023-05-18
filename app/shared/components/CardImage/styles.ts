@@ -13,8 +13,8 @@ export const styles = StyleSheet.create({
   },
 
   image: {
-    width: widthPixel(160),
-    height: heightPixel(160),
-    marginBottom: pixelSizeVertical(12),
+    width: widthPixel(200),
+    marginRight: pixelSizeHorizontal(16),
+    height: heightPixel(300),
   },
 });

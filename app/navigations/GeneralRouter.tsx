@@ -1,5 +1,5 @@
 import {createStackNavigator} from '@react-navigation/stack';
-import {PATH} from '../shared/constants/path';
+import {PATHNAME} from '../shared/constants/pathname';
 import PersonalizationScreen from '../screens/IntroScreens/PersonalizationScreen';
 import AppTabNavigation from './AppTabNavigation';
 import AboutItemsScreen from '../screens/AboutItemsScreen';
@@ -25,28 +25,28 @@ export const GeneralRouter = () => {
       {suggestion && (
         <>
           <Stack.Screen
-            name={PATH.Welcome.pathname}
+            name={PATHNAME.Welcome.pathname}
             component={WelcomeScreen}
             options={{headerShown: false}}
           />
           <Stack.Screen
-            name={PATH.Personalization.pathname}
+            name={PATHNAME.Personalization.pathname}
             component={PersonalizationScreen}
             options={{headerShown: false}}
           />
           <Stack.Screen
-            name={PATH.Home.pathname}
+            name={PATHNAME.Home.pathname}
             component={AppTabNavigation}
             options={{headerShown: false}}
           />
 
           <Stack.Screen
-            name={PATH.DetailItems.pathname}
+            name={PATHNAME.DetailItems.pathname}
             component={DetailScreen}
           />
 
           <Stack.Screen
-            name={PATH.AboutItems.pathname}
+            name={PATHNAME.AboutItems.pathname}
             component={AboutItemsScreen}
           />
         </>

@@ -7,6 +7,7 @@ import DocumentFilledIcon from '../../../assets/icons/document-filled.svg';
 import DocumentIcon from '../../../assets/icons/document.svg';
 import EllipseIcon from '../../../assets/icons/ellipse.svg';
 import HomeIcon from '../../../assets/icons/home.svg';
+import HomeFilledIcon from '../../../assets/icons/home-filled.svg';
 import MinusIcon from '../../../assets/icons/minus.svg';
 import MoreSquareIcon from '../../../assets/icons/more-square.svg';
 import PaperIcon from '../../../assets/icons/papar.svg';
@@ -14,6 +15,7 @@ import SearchFilledIcon from '../../../assets/icons/search-filled.svg';
 import SearchIcon from '../../../assets/icons/search.svg';
 import SettingsIcon from '../../../assets/icons/settings.svg';
 import TimeSquareIcon from '../../../assets/icons/time-square.svg';
+import PlayIcon from '../../../assets/icons/play.svg';
 
 import StarIcon from '../../../assets/icons/star.svg';
 import StarFilledIcon from '../../../assets/icons/star-filled.svg';
@@ -29,9 +31,11 @@ export type IconType =
   | 'document-filled'
   | 'ellipse'
   | 'home'
+  | 'home-filled'
   | 'minus'
   | 'more-square'
   | 'paper'
+  | 'play'
   | 'search-filled'
   | 'search'
   | 'settings'
@@ -42,6 +46,7 @@ export type IconType =
 export const ICONS: {
   [key in IconType]: React.FC<SvgProps>;
 } = {
+  play: PlayIcon,
   'arrow-down-square': ArrowDownSquareIcon,
   'arrow-light-left': ArrowLightLeftIcon,
   bookmark: BookmarkIcon,
@@ -50,6 +55,7 @@ export const ICONS: {
   'document-filled': DocumentFilledIcon,
   ellipse: EllipseIcon,
   home: HomeIcon,
+  'home-filled': HomeFilledIcon,
   minus: MinusIcon,
   'more-square': MoreSquareIcon,
   paper: PaperIcon,

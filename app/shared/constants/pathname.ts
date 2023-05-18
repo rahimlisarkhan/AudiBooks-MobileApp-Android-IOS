@@ -1,4 +1,4 @@
-export const PATH = {
+export const PATHNAME = {
   OnBoarding: {
     name: 'On Boarding',
     pathname: 'OnBoarding' as never,
@@ -33,18 +33,22 @@ export const PATH = {
     name: 'Error',
     pathname: 'ErrorNotFound',
   },
+
   Auth: {
     name: 'Auth',
     pathname: 'Auth',
   },
+
   GeneralRouter: {
     name: 'GeneralRouter',
     pathname: 'GeneralRouter',
   },
+
   Welcome: {
     name: 'Welcome',
     pathname: 'Welcome',
   },
+
   Personalization: {
     name: 'Personalization',
     pathname: 'Personalization',
@@ -55,9 +59,19 @@ export const PATH = {
     pathname: 'Home',
   },
 
+  SeeMore: {
+    name: 'SeeMore',
+    pathname: 'SeeMore',
+  },
+
   AboutItems: {
     name: 'About items',
     pathname: 'AboutItems',
+  },
+
+  Search: {
+    name: 'Search',
+    pathname: 'Search',
   },
 
   DetailItems: {

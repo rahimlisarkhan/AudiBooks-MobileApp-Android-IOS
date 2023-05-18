@@ -1,33 +1,32 @@
 import {View, Image} from 'react-native';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {styles} from './style';
 import {Typography} from '../../../ui/Typography';
 import {COLORS} from '../../theme/colors';
 import RaitingShow from '../RaitingShow/RaitingShow';
+import {BookType} from '../../../types/books';
+import {shortName} from '../../utils/shortName';
 
-type Props = {
-  image_url?: string | null;
-  title?: string;
-  desc?: string;
-  raiting?: number;
-};
+export const SuggestionCard: React.FC<
+  BookType & {raiting?: number; name?: string}
+> = ({picture, picture_urls, title, name, authors, raiting = 4}) => {
+  const [load, setLoad] = useState(true);
 
-export const SuggestionCard: React.FC<Props> = ({
-  image_url,
-  title,
-  desc,
-  raiting = 4,
-}) => {
   return (
     <View style={styles.container}>
-      <Image style={styles.image} source={{uri: image_url}} />
+      {load && <Typography>Loading...</Typography>}
+      <Image
+        style={styles.image}
+        onLoadEnd={() => setLoad(false)}
+        source={{uri: picture?.small ?? picture_urls?.small}}
+      />
       <View style={styles.info_content}>
         <View>
           <Typography weight="semibold" variant="body2">
-            {title?.slice(0, 20)} {title?.length > 20 ? '...' : ''}
+            {shortName(name ?? '', 20)}
           </Typography>
           <Typography variant="caption" color={COLORS.neutral60}>
-            {desc?.slice(0, 20)} {desc?.length > 20 ? '...' : ''}
+            {shortName(authors?.[0]?.name, 20)}
           </Typography>
         </View>
         <View>

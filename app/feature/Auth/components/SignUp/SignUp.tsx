@@ -6,7 +6,7 @@ import {View} from 'react-native';
 import {Button} from '../../../../ui/Button';
 import {Typography} from '../../../../ui/Typography';
 import {COLORS} from '../../../../shared/theme/colors';
-import {PATH} from '../../../../shared/constants/path';
+import {PATHNAME} from '../../../../shared/constants/pathname';
 import {useNavigation} from '@react-navigation/native';
 import {DatePickerInput} from '../../../../ui/DatePickerInput';
 
@@ -20,7 +20,7 @@ export const SignUp = () => {
   };
 
   const routeLogin = () => {
-    navigate(PATH.Login.pathname);
+    navigate(PATHNAME.Login.pathname);
   };
 
   const handleSubmitForm = () => {

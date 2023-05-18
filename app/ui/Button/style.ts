@@ -9,6 +9,9 @@ import {COLORS} from '../../shared/theme/colors';
 export const btStyle = StyleSheet.create({
   button: {
     borderRadius: 8,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 
   buttonText: {
@@ -18,7 +21,7 @@ export const btStyle = StyleSheet.create({
   },
 
   xlarge: {
-    paddingHorizontal: pixelSizeHorizontal(38),
+    paddingHorizontal: pixelSizeHorizontal(22),
     paddingVertical: pixelSizeVertical(18),
     fontSize: fontPixel(22),
   },
@@ -26,24 +29,24 @@ export const btStyle = StyleSheet.create({
   large: {
     paddingHorizontal: pixelSizeHorizontal(32),
     paddingVertical: pixelSizeVertical(16),
-    fontSize: fontPixel(18),
+    fontSize: fontPixel(16),
   },
   medium: {
     paddingHorizontal: pixelSizeHorizontal(28),
     paddingVertical: pixelSizeVertical(12),
-    fontSize: fontPixel(16),
+    fontSize: fontPixel(12),
   },
 
   small: {
     paddingHorizontal: pixelSizeHorizontal(18),
     paddingVertical: pixelSizeVertical(8),
-    fontSize: fontPixel(14),
+    fontSize: fontPixel(12),
   },
 
   xsmall: {
     paddingHorizontal: pixelSizeHorizontal(12),
     paddingVertical: pixelSizeVertical(4),
-    fontSize: fontPixel(14),
+    fontSize: fontPixel(12),
   },
 
   contained: {
@@ -63,6 +66,7 @@ export const btStyle = StyleSheet.create({
   text: {
     borderColor: COLORS.neutral80,
     backgroundColor: 'transparent !important',
+    textAlign: 'center',
   },
 
   rounded: {

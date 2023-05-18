@@ -1,20 +1,21 @@
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
 import React, {lazy} from 'react';
-import Animated, {AnimatedStyleProp} from 'react-native-reanimated';
+// import Animated, {AnimatedStyleProp} from 'react-native-reanimated';
 import {styles as styleContent} from './style';
 import {Typography} from '../../../ui/Typography';
 import {Button} from '../../../ui/Button';
 
 type Props = {
-  styles: AnimatedStyleProp<any>;
+  // styles: AnimatedStyleProp<any>;
   onFinish: () => void;
 };
 
 const CelebrateImg = lazy(() => import('../../../assets/images/celebrate.svg'));
 
-export const FinishPanel: React.FC<Props> = ({styles, onFinish}) => {
+export const FinishPanel: React.FC<Props> = ({onFinish}) => {
   return (
-    <Animated.View style={styles}>
+    // <Animated.View style={styles}>
+    <View>
       <View>
         <View style={styleContent.imageContent}>
           <CelebrateImg />
@@ -33,6 +34,7 @@ export const FinishPanel: React.FC<Props> = ({styles, onFinish}) => {
 
         <Button onPress={onFinish}>Finish</Button>
       </View>
-    </Animated.View>
+    </View>
+    // </Animated.View>
   );
 };

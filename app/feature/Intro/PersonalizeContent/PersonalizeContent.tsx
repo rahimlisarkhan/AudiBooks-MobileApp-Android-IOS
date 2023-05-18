@@ -5,9 +5,9 @@ import {TextInput} from '../../../ui/TextInput';
 import {Button} from '../../../ui/Button';
 import {useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
-import {PATH} from '../../../shared/constants/path';
+import {PATHNAME} from '../../../shared/constants/pathname';
 import {FinishPanel} from '../FinishPanel';
-import Animated, {useAnimatedStyle, withTiming} from 'react-native-reanimated';
+// import Animated, {useAnimatedStyle, withTiming} from 'react-native-reanimated';
 
 const data = [
   {id: 1, title: 'Art'},
@@ -41,21 +41,21 @@ export const PersonalizeContent = () => {
 
   const {navigate} = useNavigation();
 
-  const animatedPersonalizeStyles = useAnimatedStyle(() => {
-    return {
-      opacity: withTiming(animatedPanels.personalize_panel.opacity, {
-        duration: 500,
-      }),
-      zIndex: animatedPanels.personalize_panel.zIndex,
-    };
-  });
+  // const animatedPersonalizeStyles = useAnimatedStyle(() => {
+  //   return {
+  //     opacity: withTiming(animatedPanels.personalize_panel.opacity, {
+  //       duration: 500,
+  //     }),
+  //     zIndex: animatedPanels.personalize_panel.zIndex,
+  //   };
+  // });
 
-  const animatedFinishStyles = useAnimatedStyle(() => {
-    return {
-      opacity: withTiming(animatedPanels.finish_panel.opacity, {duration: 500}),
-      zIndex: animatedPanels.finish_panel.zIndex,
-    };
-  });
+  // const animatedFinishStyles = useAnimatedStyle(() => {
+  //   return {
+  //     opacity: withTiming(animatedPanels.finish_panel.opacity, {duration: 500}),
+  //     zIndex: animatedPanels.finish_panel.zIndex,
+  //   };
+  // });
 
   const handleSearchCategories = (text: string) => {
     console.log('text:', text);
@@ -78,7 +78,7 @@ export const PersonalizeContent = () => {
   };
 
   const changeRouteHome = () => {
-    navigate(PATH.Home.pathname);
+    navigate(PATHNAME.Home.pathname);
   };
 
   const onHandleAnimatePanels = () => {
@@ -106,7 +106,9 @@ export const PersonalizeContent = () => {
   return (
     <>
       {showPanel && (
-        <Animated.View style={animatedPersonalizeStyles}>
+        <View
+        // style={animatedPersonalizeStyles}
+        >
           <View>
             <Typography variant="body2" weight="semibold" style={styles.title}>
               Personalize Suggestion
@@ -132,12 +134,14 @@ export const PersonalizeContent = () => {
               <View style={styles.btnSendContent}>
                 <Button
                   text="Submit"
+                  size="large"
                   style={styles.marginBtn}
                   disabled={!chooseCategories.length}
                   onPress={changeRoutePersonalize}
                 />
                 <Button
                   variant="outlined"
+                  size="large"
                   text="Skip"
                   style={styles.marginBtn}
                   onPress={changeRouteHome}
@@ -145,9 +149,12 @@ export const PersonalizeContent = () => {
               </View>
             </View>
           </View>
-        </Animated.View>
+        </View>
       )}
-      <FinishPanel styles={animatedFinishStyles} onFinish={changeRouteHome} />
+      <FinishPanel
+        // styles={animatedFinishStyles}
+        onFinish={changeRouteHome}
+      />
     </>
   );
 };

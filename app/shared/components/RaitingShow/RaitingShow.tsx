@@ -14,8 +14,8 @@ type Props = {
 
 const RaitingShow: React.FC<Props> = ({raiting = 4, count = 5, show}) => {
   const content = new Array(count ?? 5)
-    .fill(0)
-    .map((_, index) => (
+    ?.fill(0)
+    ?.map((_, index) => (
       <AppIcon
         name={index < raiting ? 'star-filled' : 'star'}
         style={{marginRight: pixelSizeHorizontal(8)}}
@@ -25,7 +25,7 @@ const RaitingShow: React.FC<Props> = ({raiting = 4, count = 5, show}) => {
 
   return (
     <View style={styles.content}>
-      {content}
+      <View style={styles.stars}>{content}</View>
       {show && (
         <Typography variant="title5" color={COLORS.neutral50}>
           {raiting}.0

@@ -16,10 +16,12 @@ export const styles = StyleSheet.create({
     position: 'relative',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    height: heightPixel(200),
+    height: heightPixel(220),
   },
 
   rightBgImage: {
+    marginRight: -30,
+    marginBottom: 20,
     alignSelf: 'flex-end',
   },
 

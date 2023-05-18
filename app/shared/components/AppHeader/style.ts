@@ -12,6 +12,10 @@ export const styles = StyleSheet.create({
     backgroundColor: COLORS.neutralWhite,
     borderBottomWidth: 1,
     borderStyle: 'solid',
+    borderColor: COLORS.neutralWhite,
+  },
+
+  border: {
     borderColor: COLORS.primary5,
   },
 });

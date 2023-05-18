@@ -5,17 +5,17 @@ import {COLORS} from '../../../shared/theme/colors';
 import {styles} from './styles';
 import {Button} from '../../../ui/Button';
 import {useNavigation} from '@react-navigation/native';
-import {PATH} from '../../../shared/constants/path';
+import {PATHNAME} from '../../../shared/constants/pathname';
 
 export const WelcomeContent = () => {
   const {navigate} = useNavigation();
 
   const changeRoutePersonalize = () => {
-    navigate(PATH.Personalization.pathname);
+    navigate(PATHNAME.Personalization.pathname);
   };
 
   const changeRouteHome = () => {
-    navigate(PATH.Home.pathname);
+    navigate(PATHNAME.Home.pathname);
   };
 
   return (
@@ -38,11 +38,13 @@ export const WelcomeContent = () => {
         <View style={styles.btnSendContent}>
           <Button
             text="Personalize Your Account"
+            size="large"
             style={styles.marginBtn}
             onPress={changeRoutePersonalize}
           />
           <Button
             variant="outlined"
+            size="large"
             text="Skip"
             style={styles.marginBtn}
             onPress={changeRouteHome}

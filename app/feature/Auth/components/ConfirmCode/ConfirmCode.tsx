@@ -6,16 +6,14 @@ import {TouchableOpacity, View} from 'react-native';
 import {Button} from '../../../../ui/Button';
 import {Typography} from '../../../../ui/Typography';
 import {COLORS} from '../../../../shared/theme/colors';
-import {PATH} from '../../../../shared/constants/path';
-import {useNavigation, useRoute} from '@react-navigation/native';
+import {PATHNAME} from '../../../../shared/constants/pathname';
 import {convertToSecureEmail} from '../../../../shared/utils/convertToSecureEmail';
+import {useNavigation, useRoute} from '@react-navigation/native';
 
 export const ConfirmCode = () => {
-  const {navigate} = useNavigation();
+  const a = useNavigation();
 
-  const {
-    params: {email},
-  } = useRoute();
+  const {params} = useRoute();
 
   const [form, setForm] = useState({});
 
@@ -24,8 +22,11 @@ export const ConfirmCode = () => {
   };
 
   const routeLogin = () => {
-    navigate(PATH.Login.pathname);
+    a.navigate(PATHNAME.Login.pathname);
   };
+
+  console.log(a);
+  console.log('params', params);
 
   const handleResend = () => {
     // ... resend code
@@ -36,11 +37,11 @@ export const ConfirmCode = () => {
 
     // navigate(PATH.Login.pathname);
   };
-  const emailContent = (
-    <Typography variant="headline" weight="semibold">
-      {convertToSecureEmail(email)}
-    </Typography>
-  );
+  // const emailContent = (
+  //   <Typography variant="headline" weight="semibold">
+  //     {convertToSecureEmail(params?.email)}
+  //   </Typography>
+  // );
 
   return (
     <AuthForm

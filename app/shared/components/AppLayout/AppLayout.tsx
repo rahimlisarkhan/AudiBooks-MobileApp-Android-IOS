@@ -1,4 +1,4 @@
-import {PropsWithChildren} from 'react';
+import {CSSProperties, PropsWithChildren} from 'react';
 import {View} from 'react-native';
 import {SafeAreaView, StatusBar} from 'react-native';
 import {styles} from '../../theme/root';
@@ -13,12 +13,14 @@ import {ScrollView} from 'react-native-gesture-handler';
 type Props = {
   bgShow?: boolean;
   variant?: 'small' | 'normal' | 'none';
+  style?: CSSProperties | {};
 };
 
 export const AppLayout: React.FC<PropsWithChildren<Props>> = ({
   bgShow,
   variant = 'normal',
   children,
+  style = {},
 }) => {
   return (
     <>
@@ -29,13 +31,11 @@ export const AppLayout: React.FC<PropsWithChildren<Props>> = ({
       <View style={layoutStyle.container_area}>
         {bgShow && (
           <View style={layoutStyle.overlay}>
-            <LogoCycle width={224} height={157} color={COLORS.neutral80} />
+            <LogoCycle width={224} height={157} color={COLORS.primary50} />
             <AppIcon
               style={layoutStyle.rightBgImage}
               name="ellipse"
-              width={85}
-              size={85}
-              height={134}
+              size={135}
               color={COLORS.accent50}
             />
           </View>
@@ -45,6 +45,7 @@ export const AppLayout: React.FC<PropsWithChildren<Props>> = ({
             layoutStyle.container,
             variant && layoutStyle[variant],
             {marginTop: bgShow ? -70 : 0},
+            style,
           ]}>
           {children}
         </ScrollView>
